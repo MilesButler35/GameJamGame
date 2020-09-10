@@ -1,0 +1,9 @@
+Here are things that you may need to know about how to access git.
+
+I would recommend using the github app to make things a bit easier.
+
+Assuming you have the github desktop app all you have to do is select the TestRepository as the main repository by going up to the top left
+
+Click current repository and change it to test repository by selecting it from the dropdown
+
+Then click pull from repository if you haven't made any changes.
