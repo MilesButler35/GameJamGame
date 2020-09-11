@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8810897087078536088}
   - component: {fileID: 8810897087078536091}
-  - component: {fileID: 8810897087078536090}
   - component: {fileID: 8810897087078536038}
   - component: {fileID: 8810897087078536089}
+  - component: {fileID: 8810897087078536090}
+  - component: {fileID: 6122449931054225062}
+  - component: {fileID: 6263236725651264154}
   m_Layer: 0
   m_Name: PaperSoldier
   m_TagString: Untagged
@@ -84,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8810897087078536090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8810897087078536093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 833e1604b47e3e34d8ddcdf2392b0cea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MovementSpeed: 2
-  AttackRange: 1
 --- !u!50 &8810897087078536038
 Rigidbody2D:
   serializedVersion: 4
@@ -135,3 +123,47 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.445
+--- !u!114 &8810897087078536090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810897087078536093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833e1604b47e3e34d8ddcdf2392b0cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackRange: 1
+  AttackInterval: 1
+--- !u!114 &6122449931054225062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810897087078536093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef066678b33618346be7fb07f4cc8824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialHealthPoints: 5
+  HealthPoints: 0
+  Damage: 1
+  MovementSpeed: 2
+--- !u!114 &6263236725651264154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810897087078536093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605057541490c2c4faf33e63d3d11300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 2
+  AttackRadius: 1.25
