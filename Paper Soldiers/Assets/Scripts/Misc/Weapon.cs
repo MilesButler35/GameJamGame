@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-  public ETransformationType WeaponType;
+  public ESoldierType WeaponType;
 }

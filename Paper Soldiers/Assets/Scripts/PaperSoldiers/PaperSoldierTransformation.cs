@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public enum ETransformationType
+public enum ESoldierType
 {
   None,
 
@@ -20,7 +20,7 @@ public enum ETransformationType
 [System.Serializable]
 public struct TransformationData
 {
-  public ETransformationType Type;
+  public ESoldierType Type;
   public GameObject TransformationResult;
 }
 
@@ -28,7 +28,7 @@ public class PaperSoldierTransformation : MonoBehaviour
 {
   public TransformationData[] TransformationData;
 
-  public void PerformTransformation(ETransformationType transformationType)
+  public void PerformTransformation(ESoldierType transformationType)
   {
     GameObject transformationResult = null;
     foreach (var transfData in TransformationData)

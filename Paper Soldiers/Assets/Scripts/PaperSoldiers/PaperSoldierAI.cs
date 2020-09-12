@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PaperSoldierAI : MonoBehaviour
 {
+  public ESoldierType Type;
+
   public float AttackRange = 1;
   public float AttackInterval = 1;
   private float _attackTimer;
@@ -13,16 +15,37 @@ public class PaperSoldierAI : MonoBehaviour
   private EntityData _entityData;
   private EntityAttack _entityAttack;
 
+  private Transform _factoryBound;
+
   void Awake()
   {
     _rigidbody2D = GetComponent<Rigidbody2D>();
     _entityData = GetComponent<EntityData>();
     _entityAttack = GetComponent<EntityAttack>();
+
+    _factoryBound = FindObjectOfType<FactoryManager>().Bound;
   }
 
   // Update is called once per frame
   void Update()
   {
+    // While inside the Factory bound
+    if(transform.position.x < _factoryBound.position.x)
+    {
+      float movementSpeed = 1;
+      if(Type != ESoldierType.None)
+      {
+        movementSpeed = _entityData.MovementSpeed;
+      }
+      else
+      {
+        movementSpeed = _entityData.MovementSpeed / 5;
+      }
+      _rigidbody2D.velocity = transform.right * movementSpeed;
+      return;
+    }
+
+    // Actual Battle AI
     if(_attackTimer > 0)
     {
       _attackTimer -= Time.deltaTime;
