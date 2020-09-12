@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7370747983048910584}
   - component: {fileID: 4554052829091749313}
+  - component: {fileID: 6475221822400520021}
   - component: {fileID: 4842502620486723698}
-  - component: {fileID: -7772026501753422045}
   m_Layer: 0
-  m_Name: BLUE_AoEProjectile
+  m_Name: RED_SimpleProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,6 +83,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6475221822400520021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244836009279170106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1b6a161573ee64fbf59b0cdadf2660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 7.5
+  Damage: 1
+  AttackType: 2
+  RedStacksAmount: 5
+  BlueStacksAmount: 0
 --- !u!58 &4842502620486723698
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -99,22 +116,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-7772026501753422045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244836009279170106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46a5f941f6a7f6741b9f08cb3e0f5e72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 5
-  Damage: 0
-  AttackType: 3
-  RedStacksAmount: 0
-  BlueStacksAmount: 0
-  ExplosionPrefab: {fileID: 4510012976913179955, guid: 2888dcb13d3a32e47b8b137e409075ac,
-    type: 3}

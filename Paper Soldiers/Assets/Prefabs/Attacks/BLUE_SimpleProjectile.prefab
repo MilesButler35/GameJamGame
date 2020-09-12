@@ -99,7 +99,7 @@ MonoBehaviour:
   Damage: 1
   AttackType: 3
   RedStacksAmount: 0
-  BlueStacksAmount: 5
+  BlueStacksAmount: 1
 --- !u!58 &4842502620486723698
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4842502620486723698}
   - component: {fileID: -7772026501753422045}
   m_Layer: 0
-  m_Name: BLUE_AoEProjectile
+  m_Name: RED_AoEProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Damage: 0
-  AttackType: 3
+  AttackType: 2
   RedStacksAmount: 0
   BlueStacksAmount: 0
-  ExplosionPrefab: {fileID: 4510012976913179955, guid: 2888dcb13d3a32e47b8b137e409075ac,
+  ExplosionPrefab: {fileID: 4510012976913179955, guid: faa9f16a0e8e4a448a7e9ab91ab18522,
     type: 3}

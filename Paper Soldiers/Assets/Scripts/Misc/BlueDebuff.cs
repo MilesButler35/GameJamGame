@@ -6,7 +6,7 @@ public class BlueDebuff : MonoBehaviour
 {
   public int MaxStacksCount;
   
-  public float IntervalToDeapply = 1;
+  public float IntervalToDeapply = 2;
   private float _deapplyTimer;
 
   private readonly float SPEED_MODIFIER = .125f;
@@ -43,9 +43,10 @@ public class BlueDebuff : MonoBehaviour
     _stacksCount = Mathf.Min(_stacksCount + stacksAmount, MaxStacksCount);
     _entityData.MovementSpeed = _originalSpeed - (float)_stacksCount * SPEED_MODIFIER;
     _entityData.MovementSpeed = Mathf.Max(_entityData.MovementSpeed, 0);
+    _deapplyTimer = IntervalToDeapply;
   }
 
-  public void Deapply()
+  private void Deapply()
   {
     _stacksCount = Mathf.Max(_stacksCount - 1, 0);
     _entityData.MovementSpeed = _originalSpeed - (float)_stacksCount * SPEED_MODIFIER;

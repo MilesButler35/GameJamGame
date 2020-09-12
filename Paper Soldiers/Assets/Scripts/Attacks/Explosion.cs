@@ -24,10 +24,19 @@ public class Explosion : MonoBehaviour
   {
     if (AttackType == EAttackType.Blue)
     {
-      BlueDebuff targetSlowDebuff = target.GetComponent<BlueDebuff>();
-      if (targetSlowDebuff != null)
+      BlueDebuff targetBlueDebuff = target.GetComponent<BlueDebuff>();
+      if (targetBlueDebuff != null)
       {
-        targetSlowDebuff.Apply(BlueStacksAmount);
+        targetBlueDebuff.Apply(BlueStacksAmount);
+      }
+    }
+
+    if (AttackType == EAttackType.Red)
+    {
+      RedDebuff targetRedDebuff = target.GetComponent<RedDebuff>();
+      if (targetRedDebuff != null)
+      {
+        targetRedDebuff.Apply(RedStacksAmount);
       }
     }
   }
