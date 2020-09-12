@@ -70,6 +70,8 @@
     <Compile Include="Assets\Scripts\Entities\EntityData.cs" />
     <Compile Include="Assets\Scripts\Entities\EntityHealth.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\SpawnManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\Misc\BlueDebuff.cs" />
     <Compile Include="Assets\Scripts\Misc\RedDebuff.cs" />
     <Compile Include="Assets\Scripts\Misc\TTL.cs" />

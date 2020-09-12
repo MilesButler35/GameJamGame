@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     Transform currentItem = null;
 
     private bool touchingWeapon;
+    private bool hasWeapon;
+    private bool touchingSoldier;
+
+    Transform soldier;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,7 @@ public class PlayerController : MonoBehaviour
         verticalMove = Input.GetAxis("Vertical");
 
         PickupWeapon();
+        GiveWeapon();
     }
 
     private void FixedUpdate()
@@ -40,16 +46,25 @@ public class PlayerController : MonoBehaviour
     //Check if the object the player is colliding with is a weapon
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Pickup an item if it has the right tag and the player isn't holding anything else
         
+            //Check to see if the player is colliding with a weapon, and mark true if the player is colliding with an item
             if ((other.CompareTag("Sword") || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && currentItem == null)
             {
-
-                     Debug.Log("Impact with Weapon");
-                    //Take a reference to Collided Object
-                    currentItem = other.transform;
-                    touchingWeapon = true;
                 
+                     Debug.Log("Impact with " + other.tag);
+                     //Take a reference to Collided Object
+                     touchingWeapon = true;
+                     currentItem = other.transform;
+                   
+                    
+                
+            }
+
+            if (other.CompareTag("Soldier") && currentItem != null)
+            {
+                Debug.Log("Impact with Soldier");
+                touchingSoldier = true;
+                soldier = other.transform;
             }
         
     }
@@ -57,14 +72,20 @@ public class PlayerController : MonoBehaviour
     //Check if the player is leaving the vicinity of a weapon or unit
     private void OnTriggerExit2D(Collider2D other)
     {
-        if ((other.CompareTag("Sword") && currentItem == null || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && currentItem == null)
+        if ((other.CompareTag("Sword") || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && currentItem != null)
         {
 
-            Debug.Log("Leaving Weapon");
-            
-            currentItem = null;
+            Debug.Log("Leaving " + other.tag);
             touchingWeapon = false;
+            
 
+        }
+
+        if (other.CompareTag("Soldier") && currentItem != null)
+        {
+            Debug.Log("Leaving Soldier");
+            touchingSoldier = false;
+            soldier = null;
         }
     }
 
@@ -79,6 +100,14 @@ public class PlayerController : MonoBehaviour
 
             //Make it a child of the player so that it moves along with the player
             currentItem.parent = transform;
+
+            touchingWeapon = false;
+            hasWeapon = true;
+
+            if (hasWeapon == true)
+            {
+                Debug.Log("Player has a weapon");
+            }
         }
     }
     void SetColor()
@@ -88,7 +117,14 @@ public class PlayerController : MonoBehaviour
 
     void GiveWeapon()
     {
-
+        if (touchingSoldier == true && Input.GetKeyDown(KeyCode.Space) && hasWeapon == true)
+        {
+            Debug.Log("Weapon Given");  
+            currentItem.parent = soldier.transform;
+            hasWeapon = false;
+            currentItem = null;
+            touchingWeapon = false;
+        }
     }
 
 
