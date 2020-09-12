@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    private float spawnRate = 1.0f;
+    
     private int score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -24,18 +24,21 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        this.GetComponent<SpawnManager>().enabled = false;
     }
 
-    public void StartGame(int difficulty)
+    //Starts the game when the corresponding button is pressed
+    public void StartGame()
     {
-        titleScreen.gameObject.SetActive(false);
-        isGameActive = true;
-        this.GetComponent<SpawnManager>().enabled = true;
-        score = 0;
-        UpdateScore(0);
-        spawnRate /= difficulty;
+        titleScreen.gameObject.SetActive(false); //Turns off the Title Text
+        isGameActive = true; // Sets the game to active mode, which interacts with the spawn manager
+        this.GetComponent<SpawnManager>().enabled = true; //Sets the spawnmanager to on.
+        score = 0; // Makes sure the score is 0.
+        UpdateScore(0); 
+        UpdateWave(1); //Makes sure the Wave number is 1.
+        
     }
+
+    //Makes sure to stop the wave spawner if the Game is over
     public void GameOver()
     {
         isGameActive = false;
@@ -60,5 +63,10 @@ public class GameManager : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
+    }
+
+    public void UpdateWave(int waveNumber)
+    {
+        waveNumber = spawnManager.waveNumber;
     }
 }

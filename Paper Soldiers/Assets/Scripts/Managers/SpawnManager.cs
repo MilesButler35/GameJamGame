@@ -5,15 +5,19 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    private float spawnRange = 9;
+    private float xSpawnRangeMin = 9;
+    private float xSpawnRangeMax = 9;
+    private float ySpawnRangeMin = 9;
+    private float ySpawnRangeMax = 9;
     public int waveNumber = 1;
     public int enemyCount;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
 
-
+        
         SpawnEnemyWave(waveNumber);
     }
 
@@ -29,11 +33,11 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    Vector3 GenerateSpawnPosition()
+    Vector2 GenerateSpawnPosition()
     {
-        float spawnX = Random.Range(-spawnRange, spawnRange);
-        float spawnY = Random.Range(-spawnRange, spawnRange);
-        Vector2 randomPos = new Vector3(spawnX, spawnY);
+        float spawnX = Random.Range(xSpawnRangeMin, xSpawnRangeMax);
+        float spawnY = Random.Range(ySpawnRangeMin, ySpawnRangeMax);
+        Vector2 randomPos = new Vector2(spawnX, spawnY);
 
         return randomPos;
 
