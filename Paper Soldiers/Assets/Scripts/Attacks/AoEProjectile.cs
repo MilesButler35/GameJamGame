@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AoEProjectile : Projectile
+public class AoEProjectile : AttackBase
 {
   public GameObject ExplosionPrefab;
+  
 
   protected override void OnImpact()
   {
