@@ -28,7 +28,7 @@ public class PaperSoldierTransformation : MonoBehaviour
 {
   public TransformationData[] TransformationData;
 
-  public void Transform(ETransformationType transformationType)
+  public void PerformTransformation(ETransformationType transformationType)
   {
     GameObject transformationResult = null;
     foreach (var transfData in TransformationData)

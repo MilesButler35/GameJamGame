@@ -31,8 +31,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxis("Horizontal");
-        verticalMove = Input.GetAxis("Vertical");
+        horizontalMove = Input.GetAxisRaw("Horizontal");
+        verticalMove = Input.GetAxisRaw("Vertical");
 
         PickupWeapon();
         GiveWeapon();
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRb.velocity = new Vector2(horizontalMove * moveSpeed * Time.deltaTime, verticalMove * moveSpeed * Time.deltaTime);
+        playerRb.velocity = new Vector2(horizontalMove * moveSpeed, verticalMove * moveSpeed);
     }
 
     //Check if the object the player is colliding with is a weapon
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
                 
             }
 
-            if (other.CompareTag("Soldier") && currentItem != null)
+            if (other.CompareTag("PaperSoldier") && currentItem != null)
             {
                 Debug.Log("Impact with Soldier");
                 touchingSoldier = true;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (other.CompareTag("Soldier") && currentItem != null)
+        if (other.CompareTag("PaperSoldier") && currentItem != null)
         {
             Debug.Log("Leaving Soldier");
             touchingSoldier = false;
@@ -119,8 +119,13 @@ public class PlayerController : MonoBehaviour
     {
         if (touchingSoldier == true && Input.GetKeyDown(KeyCode.Space) && hasWeapon == true)
         {
-            Debug.Log("Weapon Given");  
-            currentItem.parent = soldier.transform;
+            Debug.Log("Weapon Given");
+
+            Weapon weapon = currentItem.GetComponent<Weapon>();
+            PaperSoldierTransformation soldierTransformation = soldier.GetComponent<PaperSoldierTransformation>();
+            soldierTransformation.PerformTransformation(weapon.WeaponType);
+            Destroy(currentItem.gameObject);
+
             hasWeapon = false;
             currentItem = null;
             touchingWeapon = false;
