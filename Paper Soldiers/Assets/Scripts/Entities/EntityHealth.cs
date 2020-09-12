@@ -16,8 +16,6 @@ public class EntityHealth : MonoBehaviour
   {
     _entityData.HealthPoints -= amount;
     
-    Debug.Log("Entity " + name + " Has " + _entityData.HealthPoints + " health points");
-
     if(_entityData.HealthPoints <= 0)
     {
       Destroy(this.gameObject);
