@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityHealth : MonoBehaviour
 {
+  public Action OnDeath;
+
   private EntityData _entityData;
 
   void Start()
@@ -16,10 +19,9 @@ public class EntityHealth : MonoBehaviour
   {
     _entityData.HealthPoints -= amount;
 
-    Debug.Log($"Damage caused {name}. Amount: {amount}. Remaining Health: {_entityData.HealthPoints}");
-
     if(_entityData.HealthPoints <= 0)
     {
+      OnDeath?.Invoke();
       Destroy(this.gameObject);
     }
   }
