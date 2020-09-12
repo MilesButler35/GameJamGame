@@ -24,7 +24,7 @@ public class Explosion : MonoBehaviour
   {
     if (AttackType == EAttackType.Blue)
     {
-      SlowDebuff targetSlowDebuff = target.GetComponent<SlowDebuff>();
+      BlueDebuff targetSlowDebuff = target.GetComponent<BlueDebuff>();
       if (targetSlowDebuff != null)
       {
         targetSlowDebuff.Apply(BlueStacksAmount);

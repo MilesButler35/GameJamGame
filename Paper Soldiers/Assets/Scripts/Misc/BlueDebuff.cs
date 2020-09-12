@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlowDebuff : MonoBehaviour
+public class BlueDebuff : MonoBehaviour
 {
   public int MaxStacksCount;
   
