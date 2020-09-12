@@ -12,10 +12,12 @@ public class EntityHealth : MonoBehaviour
     _entityData.HealthPoints = _entityData.InitialHealthPoints;
   }
 
-  public void ApplyDamage(int amount)
+  public void ApplyDamage(float amount)
   {
     _entityData.HealthPoints -= amount;
-    
+
+    Debug.Log($"Damage caused {name}. Amount: {amount}. Remaining Health: {_entityData.HealthPoints}");
+
     if(_entityData.HealthPoints <= 0)
     {
       Destroy(this.gameObject);

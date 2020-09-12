@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1386072369315458172
+--- !u!1001 &1188188747379837437
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -16,43 +16,43 @@ PrefabInstance:
     - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.11792451
-      objectReference: {fileID: 0}
-    - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
-        type: 3}
-      propertyPath: m_Color.g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
+      propertyPath: m_Color.g
+      value: 0.43138325
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
       propertyPath: m_Color.b
-      value: 0.5115709
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1989547626063826457, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: ProjectilePrefab
       value: 
-      objectReference: {fileID: 1244836009279170106, guid: 3f37650698ecfa547a13061453fe2e0a,
+      objectReference: {fileID: 1244836009279170106, guid: fb80f2e40a5f6a44b81073cdf1a82e4c,
         type: 3}
     - target: {fileID: 1989547626063826459, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_Name
-      value: WHITE_Archer
+      value: RED_Mage
       objectReference: {fileID: 0}
     - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: AttackRange
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.78
+      value: -0.52084005
       objectReference: {fileID: 0}
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.16
+      value: -2.2588427
       objectReference: {fileID: 0}
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}

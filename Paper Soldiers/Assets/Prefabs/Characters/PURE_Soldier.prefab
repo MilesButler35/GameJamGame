@@ -16,9 +16,11 @@ GameObject:
   - component: {fileID: 8884683467059398727}
   - component: {fileID: 1989547626063826457}
   - component: {fileID: 1989547626063826456}
+  - component: {fileID: 43864687}
+  - component: {fileID: 8267983170182633097}
   m_Layer: 0
   m_Name: PURE_Soldier
-  m_TagString: Untagged
+  m_TagString: PaperSoldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8aab154eeea0a964ebed224d1016626b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6468aa24df146f459044bd7ae5bf2bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialHealthPoints: 5
   HealthPoints: 0
-  MovementSpeed: 2
+  MovementSpeed: 1
 --- !u!114 &1989547626063826457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,11 +193,14 @@ MonoBehaviour:
     TransformationResult: {fileID: 621525884516016743, guid: a5f7a93197fc02a428ff16433e596099,
       type: 3}
   - Type: 4
-    TransformationResult: {fileID: 0}
+    TransformationResult: {fileID: 9141314949420399849, guid: b71172c87f95c9e409c3e2c79546d96b,
+      type: 3}
+  - Type: 5
+    TransformationResult: {fileID: 855965784532355046, guid: 51bae046ce9ef974cae45f2f46859ccd,
+      type: 3}
   - Type: 6
-    TransformationResult: {fileID: 0}
-  - Type: 6
-    TransformationResult: {fileID: 0}
+    TransformationResult: {fileID: 621525884516016743, guid: 820ead50314ff8d429a1170d2bc67717,
+      type: 3}
   - Type: 7
     TransformationResult: {fileID: 9141314949420399849, guid: 75b0625234e1d594d9accb8a71a7fa1d,
       type: 3}
@@ -205,3 +210,34 @@ MonoBehaviour:
   - Type: 9
     TransformationResult: {fileID: 621525884516016743, guid: 284defb3f0a317a44901de6ea2f41a84,
       type: 3}
+--- !u!95 &43864687
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989547626063826459}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75e8c2cab6e0d1544be26c552067b6f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8267983170182633097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989547626063826459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558ac8119c6862f45a1f792f205abe36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

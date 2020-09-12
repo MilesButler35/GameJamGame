@@ -10,8 +10,20 @@ public class Explosion : MonoBehaviour
   public int RedStacksAmount;
   public int BlueStacksAmount;
 
+  private GameObject _owner;
+  private string _teamTag;
+
+  public void Initialize(GameObject owner, string teamTag)
+  {
+    _owner = owner;
+    _teamTag = teamTag;
+  }
+
   private void OnTriggerEnter2D(Collider2D collider)
   {
+    if (collider.gameObject == _owner || collider.tag == _teamTag)
+      return;
+
     EntityHealth targetHealth = collider.GetComponent<EntityHealth>();
     if(targetHealth != null)
     {
@@ -24,10 +36,19 @@ public class Explosion : MonoBehaviour
   {
     if (AttackType == EAttackType.Blue)
     {
-      BlueDebuff targetSlowDebuff = target.GetComponent<BlueDebuff>();
-      if (targetSlowDebuff != null)
+      BlueDebuff targetBlueDebuff = target.GetComponent<BlueDebuff>();
+      if (targetBlueDebuff != null)
       {
-        targetSlowDebuff.Apply(BlueStacksAmount);
+        targetBlueDebuff.Apply(BlueStacksAmount);
+      }
+    }
+
+    if (AttackType == EAttackType.Red)
+    {
+      RedDebuff targetRedDebuff = target.GetComponent<RedDebuff>();
+      if (targetRedDebuff != null)
+      {
+        targetRedDebuff.Apply(RedStacksAmount);
       }
     }
   }
