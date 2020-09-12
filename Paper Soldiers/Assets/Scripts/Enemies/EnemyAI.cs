@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+  public float DamageToFactory = 1;
+
   public float AttackRange = 1;
   public float AttackInterval = 1;
   private float _attackTimer;
@@ -75,5 +77,18 @@ public class EnemyAI : MonoBehaviour
   private void OnDrawGizmos()
   {
     Gizmos.DrawWireSphere(transform.position, AttackRange);
+  }
+
+  private void OnTriggerEnter2D(Collider2D collider)
+  {
+    if(collider.tag == "Factory")
+    {
+      EntityHealth factoryHealth = collider.GetComponent<EntityHealth>();
+      if(factoryHealth != null)
+      {
+        factoryHealth.ApplyDamage(DamageToFactory);
+        Destroy(this.gameObject);
+      }
+    }
   }
 }
