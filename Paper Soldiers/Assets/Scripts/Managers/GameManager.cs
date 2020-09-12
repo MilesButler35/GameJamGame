@@ -7,10 +7,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
-
-
-    
     private int score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -23,11 +19,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerObject;
     public GameObject playerSpawn;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     //Starts the game when the corresponding button is pressed
     public void StartGame()
@@ -39,7 +30,6 @@ public class GameManager : MonoBehaviour
         UpdateScore(0); 
         UpdateWave(1); //Makes sure the Wave number is 1.
         Instantiate(playerObject, playerSpawn.transform.position, Quaternion.identity); // Spawn player character
-
     }
 
     //Makes sure to stop the wave spawner if the Game is over
@@ -48,19 +38,11 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
-
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void UpdateScore(int scoreToAdd)
