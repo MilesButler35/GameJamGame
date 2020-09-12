@@ -63,7 +63,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Attacks\AoEProjectile.cs" />
+    <Compile Include="Assets\Scripts\Attacks\AttackBase.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Explosion.cs" />
+    <Compile Include="Assets\Scripts\Entities\EntityAttack.cs" />
+    <Compile Include="Assets\Scripts\Entities\EntityData.cs" />
+    <Compile Include="Assets\Scripts\Entities\EntityHealth.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Misc\BlueDebuff.cs" />
+    <Compile Include="Assets\Scripts\Misc\RedDebuff.cs" />
+    <Compile Include="Assets\Scripts\Misc\TTL.cs" />
+    <Compile Include="Assets\Scripts\PaperSoldiers\PaperSoldierAI.cs" />
+    <Compile Include="Assets\Scripts\PaperSoldiers\PaperSoldierTransformation.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <None Include="Assets\Knight Files\Read Me.txt" />
     <Reference Include="UnityEngine">
