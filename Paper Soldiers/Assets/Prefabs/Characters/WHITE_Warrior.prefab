@@ -28,6 +28,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WHITE_Warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 3330763597860257174, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8884683467059398727, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: MovementSpeed

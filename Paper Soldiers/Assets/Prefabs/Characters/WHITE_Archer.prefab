@@ -43,6 +43,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WHITE_Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 3330763597860257174, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: AttackRange
