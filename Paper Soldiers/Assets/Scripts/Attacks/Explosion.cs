@@ -10,8 +10,20 @@ public class Explosion : MonoBehaviour
   public int RedStacksAmount;
   public int BlueStacksAmount;
 
+  private GameObject _owner;
+  private string _teamTag;
+
+  public void Initialize(GameObject owner, string teamTag)
+  {
+    _owner = owner;
+    _teamTag = teamTag;
+  }
+
   private void OnTriggerEnter2D(Collider2D collider)
   {
+    if (collider.gameObject == _owner || collider.tag == _teamTag)
+      return;
+
     EntityHealth targetHealth = collider.GetComponent<EntityHealth>();
     if(targetHealth != null)
     {

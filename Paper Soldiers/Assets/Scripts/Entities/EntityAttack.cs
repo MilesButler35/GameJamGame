@@ -12,6 +12,14 @@ public class EntityAttack : MonoBehaviour
     Vector2 attackOrigin = transform.position + transform.right * AttackOriginOffset;
 
     GameObject newProjectile = Instantiate(ProjectilePrefab, attackOrigin, Quaternion.identity);
+    
+    // RANGED
+    AttackBase attackBase = newProjectile.GetComponent<AttackBase>();
+    attackBase?.Initialize(this.gameObject, this.tag);
+
+    // MELEE
+    Explosion explosion = newProjectile.GetComponent<Explosion>();
+    explosion?.Initialize(this.gameObject, this.tag);
 
     newProjectile.transform.LookAt(attackPosition, Vector3.up);
 

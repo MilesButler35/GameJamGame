@@ -49,7 +49,6 @@ public class PaperSoldierAI : MonoBehaviour
       return;
     }
     
-
     Vector2 movementDirection = (targetTransform.position - transform.position).normalized;
     _rigidbody2D.velocity = movementDirection * _entityData.MovementSpeed;
   }
