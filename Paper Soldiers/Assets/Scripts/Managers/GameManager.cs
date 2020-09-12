@@ -20,10 +20,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject titleScreen;
     public SpawnManager spawnManager;
+
+    public GameObject playerObject;
+    public GameObject playerSpawn;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     //Starts the game when the corresponding button is pressed
@@ -35,7 +38,8 @@ public class GameManager : MonoBehaviour
         score = 0; // Makes sure the score is 0.
         UpdateScore(0); 
         UpdateWave(1); //Makes sure the Wave number is 1.
-        
+        Instantiate(playerObject, playerSpawn.transform.position, Quaternion.identity); // Spawn player character
+
     }
 
     //Makes sure to stop the wave spawner if the Game is over

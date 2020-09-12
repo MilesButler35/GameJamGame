@@ -1,5 +1,6 @@
 sceneSetups:
-- path: Assets/Scenes/MilesTestScene.unity
+- path: C:/Users/Miles/Documents/GitHub/Health-Bar/Health Bar/Assets/Scenes/Simple
+    Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     private float xSpawnRangeMin = 9;
     private float xSpawnRangeMax = 9;
     private float ySpawnRangeMin = 9;
-    private float ySpawnRangeMax = 9;
+    private float ySpawnRangeMax = 9    ;
     public int waveNumber = 1;
     public int enemyCount;
     public GameManager gameManager;

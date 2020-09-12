@@ -11,6 +11,7 @@ TagManager:
   - RedPaint
   - BluePaint
   - Soldier
+  - Factory
   layers:
   - Default
   - TransparentFX
