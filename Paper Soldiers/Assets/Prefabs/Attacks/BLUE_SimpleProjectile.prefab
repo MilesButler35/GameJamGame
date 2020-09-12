@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 7.5
-  Damage: 3
+  Damage: 1
   AttackType: 3
   RedStacksAmount: 0
   BlueStacksAmount: 5

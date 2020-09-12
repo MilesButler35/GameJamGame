@@ -9,14 +9,16 @@ public class SlowDebuff : MonoBehaviour
   public float IntervalToDeapply = 1;
   private float _deapplyTimer;
 
-  private readonly float SPEED_MODIFIER = .25f;
+  private readonly float SPEED_MODIFIER = .125f;
 
   private EntityData _entityData;
   private int _stacksCount;
+  private float _originalSpeed;
 
   void Start()
   {
     _entityData = GetComponent<EntityData>();
+    _originalSpeed = _entityData.MovementSpeed;
   }
 
   private void Update()
@@ -38,13 +40,15 @@ public class SlowDebuff : MonoBehaviour
 
   public void Apply(int stacksAmount)
   {
-    _stacksCount = Mathf.Max(_stacksCount + 1, MaxStacksCount);
-    _entityData.MovementSpeed = _entityData.MovementSpeed - _stacksCount * SPEED_MODIFIER;
+    _stacksCount = Mathf.Min(_stacksCount + stacksAmount, MaxStacksCount);
+    _entityData.MovementSpeed = _originalSpeed - (float)_stacksCount * SPEED_MODIFIER;
+    _entityData.MovementSpeed = Mathf.Max(_entityData.MovementSpeed, 0);
   }
 
   public void Deapply()
   {
     _stacksCount = Mathf.Max(_stacksCount - 1, 0);
-    _entityData.MovementSpeed = _entityData.MovementSpeed - _stacksCount * SPEED_MODIFIER;
+    _entityData.MovementSpeed = _originalSpeed - (float)_stacksCount * SPEED_MODIFIER;
+    _entityData.MovementSpeed = Mathf.Max(_entityData.MovementSpeed, 0);
   }
 }

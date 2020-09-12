@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 627628261}
   - component: {fileID: 627628260}
   - component: {fileID: 627628259}
+  - component: {fileID: 627628265}
   m_Layer: 0
   m_Name: TestEnemy (1)
   m_TagString: Enemy
@@ -353,6 +354,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &627628265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627628258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac97058f75be6e4ea112f65a8d7ed74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxStacksCount: 10
+  IntervalToDeapply: 1
 --- !u!1 &722722544
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +382,7 @@ GameObject:
   - component: {fileID: 722722547}
   - component: {fileID: 722722546}
   - component: {fileID: 722722545}
+  - component: {fileID: 722722551}
   m_Layer: 0
   m_Name: TestEnemy (5)
   m_TagString: Enemy
@@ -502,6 +518,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &722722551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722722544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac97058f75be6e4ea112f65a8d7ed74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxStacksCount: 10
+  IntervalToDeapply: 1
 --- !u!1 &1087065574
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +546,7 @@ GameObject:
   - component: {fileID: 1087065577}
   - component: {fileID: 1087065576}
   - component: {fileID: 1087065575}
+  - component: {fileID: 1087065581}
   m_Layer: 0
   m_Name: TestEnemy (3)
   m_TagString: Enemy
@@ -651,6 +682,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1087065581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087065574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac97058f75be6e4ea112f65a8d7ed74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxStacksCount: 10
+  IntervalToDeapply: 1
 --- !u!1 &1994749224
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +710,7 @@ GameObject:
   - component: {fileID: 1994749227}
   - component: {fileID: 1994749226}
   - component: {fileID: 1994749225}
+  - component: {fileID: 1994749231}
   m_Layer: 0
   m_Name: TestEnemy (4)
   m_TagString: Enemy
@@ -800,6 +846,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1994749231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994749224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac97058f75be6e4ea112f65a8d7ed74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxStacksCount: 10
+  IntervalToDeapply: 1
 --- !u!1 &2051539055
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +874,7 @@ GameObject:
   - component: {fileID: 2051539058}
   - component: {fileID: 2051539057}
   - component: {fileID: 2051539056}
+  - component: {fileID: 2051539062}
   m_Layer: 0
   m_Name: TestEnemy (2)
   m_TagString: Enemy
@@ -949,6 +1010,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2051539062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051539055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac97058f75be6e4ea112f65a8d7ed74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxStacksCount: 10
+  IntervalToDeapply: 1
 --- !u!1001 &3871581632539411509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1016,6 +1091,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PaperSoldier_WhiteWarrior
       objectReference: {fileID: 0}
+    - target: {fileID: 9141314949420399849, guid: ed475e3780ead7f40acbce823ddd993c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9168769749898587720, guid: ed475e3780ead7f40acbce823ddd993c,
         type: 3}
       propertyPath: m_Sprite
@@ -1035,6 +1115,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PaperSoldier_Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 621525884516016743, guid: a5f7a93197fc02a428ff16433e596099,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7959257774461199747, guid: a5f7a93197fc02a428ff16433e596099,
         type: 3}
@@ -1105,6 +1190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PaperSoldier_Pure
       objectReference: {fileID: 0}
+    - target: {fileID: 1989547626063826459, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1173,6 +1263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PaperSoldier_Mage
+      objectReference: {fileID: 0}
+    - target: {fileID: 855965784532355046, guid: 669b07723a7d7aa4b83ba9738ac67546,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7869456377448464386, guid: 669b07723a7d7aa4b83ba9738ac67546,
         type: 3}
