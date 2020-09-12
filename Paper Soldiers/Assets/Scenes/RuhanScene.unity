@@ -1069,7 +1069,7 @@ PrefabInstance:
     - target: {fileID: 1731798135680056077, guid: ed475e3780ead7f40acbce823ddd993c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1731798135680056077, guid: ed475e3780ead7f40acbce823ddd993c,
         type: 3}
@@ -1159,7 +1159,7 @@ PrefabInstance:
     - target: {fileID: 7959257774461199747, guid: a5f7a93197fc02a428ff16433e596099,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7959257774461199747, guid: a5f7a93197fc02a428ff16433e596099,
         type: 3}
@@ -1185,6 +1185,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1989547626063826456, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: TransformationData.Array.data[7].TransformationResult
+      value: 
+      objectReference: {fileID: 855965784532355046, guid: 8b98a1f4d8878ad4cbf3cbb01cae4226,
+        type: 3}
+    - target: {fileID: 1989547626063826456, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: TransformationData.Array.data[8].TransformationResult
+      value: 
+      objectReference: {fileID: 621525884516016743, guid: 284defb3f0a317a44901de6ea2f41a84,
+        type: 3}
+    - target: {fileID: 1989547626063826456, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: TransformationData.Array.data[6].TransformationResult
+      value: 
+      objectReference: {fileID: 9141314949420399849, guid: 75b0625234e1d594d9accb8a71a7fa1d,
+        type: 3}
     - target: {fileID: 1989547626063826459, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_Name
@@ -1233,7 +1251,7 @@ PrefabInstance:
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
@@ -1307,7 +1325,7 @@ PrefabInstance:
     - target: {fileID: 7869456377448464386, guid: 669b07723a7d7aa4b83ba9738ac67546,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7869456377448464386, guid: 669b07723a7d7aa4b83ba9738ac67546,
         type: 3}

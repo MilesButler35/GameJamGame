@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1989547626063826457}
   - component: {fileID: 1989547626063826456}
   m_Layer: 0
-  m_Name: PaperSoldier_Pure
+  m_Name: PURE_Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,8 +197,11 @@ MonoBehaviour:
   - Type: 6
     TransformationResult: {fileID: 0}
   - Type: 7
-    TransformationResult: {fileID: 0}
+    TransformationResult: {fileID: 9141314949420399849, guid: 75b0625234e1d594d9accb8a71a7fa1d,
+      type: 3}
   - Type: 8
-    TransformationResult: {fileID: 0}
+    TransformationResult: {fileID: 855965784532355046, guid: 8b98a1f4d8878ad4cbf3cbb01cae4226,
+      type: 3}
   - Type: 9
-    TransformationResult: {fileID: 0}
+    TransformationResult: {fileID: 621525884516016743, guid: 284defb3f0a317a44901de6ea2f41a84,
+      type: 3}
