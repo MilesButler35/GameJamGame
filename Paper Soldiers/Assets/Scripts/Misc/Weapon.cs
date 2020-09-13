@@ -11,13 +11,16 @@ public class Weapon : MonoBehaviour
   public ESoldierType TransformationType;
   public WeaponType WeaponType;
 
-  public void TransformWeapon(Color newColor)
+  public Color RedColor;
+  public Color BlueColor;
+
+  public void TransformWeapon(PaintColor newColor)
   {
     SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
     switch (newColor)
     {
-      case Color.Red:
-        spriteRenderer.sprite = RedEquivalent;
+      case PaintColor.Red:
+        spriteRenderer.color = RedColor;
 
         if (WeaponType == WeaponType.Sword)
           TransformationType = ESoldierType.RedWarrior;
@@ -29,8 +32,8 @@ public class Weapon : MonoBehaviour
           TransformationType = ESoldierType.RedArcher;
 
         break;
-      case Color.Blue:
-        spriteRenderer.sprite = BlueEquivalent;
+      case PaintColor.Blue:
+        spriteRenderer.color = BlueColor;
 
         if (WeaponType == WeaponType.Sword)
           TransformationType = ESoldierType.BlueWarrior;

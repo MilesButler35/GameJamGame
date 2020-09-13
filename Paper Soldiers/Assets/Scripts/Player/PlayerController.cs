@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
   {
     if(Input.GetKeyDown(KeyCode.Space) && touchingPaintBucket && hasWeapon == true)
     {
-      Color targetColor = paintBucket.GetComponent<PaintBucket>().MyColor;
+      PaintColor targetColor = paintBucket.GetComponent<PaintBucket>().MyColor;
       currentItem.GetComponent<Weapon>().TransformWeapon(targetColor);
     }
   }

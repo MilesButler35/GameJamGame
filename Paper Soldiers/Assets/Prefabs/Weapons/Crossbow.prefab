@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4774300173781749348}
   - component: {fileID: 4774300173781749369}
   m_Layer: 0
-  m_Name: TestSword
+  m_Name: Crossbow
   m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,10 +70,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1899437703
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 722457268bcad2f4ebb4c3ee499643b3, type: 3}
-  m_Color: {r: 0, g: 0.49224067, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 53ecd9092f55d4f4ba147f6f7c909de4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,14 +100,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.06, y: 3.28}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1.06, y: 3.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.06, y: 3.28}
+  m_Size: {x: 0.96, y: 1.49}
   m_EdgeRadius: 0
 --- !u!114 &4774300173781749369
 MonoBehaviour:
@@ -123,5 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlueEquivalent: {fileID: 0}
   RedEquivalent: {fileID: 0}
-  TransformationType: 2
-  WeaponType: 2
+  TransformationType: 3
+  WeaponType: 3
+  RedColor: {r: 0.78431374, g: 0.19607843, b: 0.3137255, a: 1}
+  BlueColor: {r: 0, g: 0.5882353, b: 0.78431374, a: 1}
