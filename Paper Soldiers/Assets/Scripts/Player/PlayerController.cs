@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
   public Transform carryLocation;
   Transform currentItem = null;
+  Transform touchedWeapon = null;
 
   private bool touchingWeapon;
   private bool hasWeapon;
@@ -51,13 +52,13 @@ public class PlayerController : MonoBehaviour
   private void OnTriggerEnter2D(Collider2D other)
   {
     //Check to see if the player is colliding with a weapon, and mark true if the player is colliding with an item
-    if ((other.CompareTag("Sword") || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && currentItem == null)
+    if ((other.CompareTag("Sword") || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && touchedWeapon == null)
     {
 
       Debug.Log("Impact with " + other.tag);
       //Take a reference to Collided Object
       touchingWeapon = true;
-      currentItem = other.transform;
+      touchedWeapon = other.transform;
     }
 
     if (other.CompareTag("PaperSoldier") && currentItem != null)
@@ -78,12 +79,12 @@ public class PlayerController : MonoBehaviour
   //Check if the player is leaving the vicinity of a weapon or unit
   private void OnTriggerExit2D(Collider2D other)
   {
-    if ((other.CompareTag("Sword") || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && currentItem != null)
+    if ((other.CompareTag("Sword") || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && touchedWeapon != null)
     {
 
       Debug.Log("Leaving " + other.tag);
       touchingWeapon = false;
-      currentItem = null;
+      touchedWeapon = null;
     }
 
     if (other.CompareTag("PaperSoldier") && currentItem != null)
@@ -107,7 +108,8 @@ public class PlayerController : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Space) && touchingWeapon == true)
     {
       Debug.Log("Pickup Weapon");
-      //Move it to carrying point 
+      //Move it to carrying point
+      currentItem = touchedWeapon;
       currentItem.position = carryLocation.position;
 
       //Make it a child of the player so that it moves along with the player
