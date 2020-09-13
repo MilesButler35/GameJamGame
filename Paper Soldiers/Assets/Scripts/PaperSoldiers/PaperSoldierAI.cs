@@ -58,7 +58,7 @@ public class PaperSoldierAI : MonoBehaviour
       }
       else
       {
-        movementSpeed = _entityData.MovementSpeed / 5;
+        movementSpeed = _entityData.MovementSpeed / 3;
       }
 
       _rigidbody2D.velocity = transform.right * movementSpeed;

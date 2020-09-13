@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 1
   AttackType: 2
-  RedStacksAmount: 2
+  RedStacksAmount: 5
   BlueStacksAmount: 0
 --- !u!114 &7018519031462625289
 MonoBehaviour:
