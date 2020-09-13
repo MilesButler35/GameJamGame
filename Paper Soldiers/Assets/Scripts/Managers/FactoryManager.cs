@@ -44,6 +44,9 @@ public class FactoryManager : MonoBehaviour
     {
       Destroy(enemy.gameObject);
     }
+
+    SpawnManager spawnManager = FindObjectOfType<SpawnManager>();
+    spawnManager.enabled = false;
   }
 
   private void Update()
