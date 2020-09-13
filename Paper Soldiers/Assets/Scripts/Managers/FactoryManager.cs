@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class FactoryManager : MonoBehaviour
 {
@@ -10,13 +11,14 @@ public class FactoryManager : MonoBehaviour
   public Transform Bound;
 
   private float _spawnTimer;
-  private GameObject[] _spawnedSoldiers;
+  private int _soldiersAtFactory;
   private Transform[] _spawnPoints;
+
+  private const int MAX_UNITS_FACTORY = 3;
 
   private void Awake()
   {
     _spawnPoints = new Transform[transform.childCount];
-    _spawnedSoldiers = new GameObject[transform.childCount];
     for (int i = 0; i < transform.childCount; i++)
     {
       _spawnPoints[i] = transform.GetChild(i);
@@ -46,7 +48,7 @@ public class FactoryManager : MonoBehaviour
 
   private void Update()
   {
-    bool canSpawn = CheckIfCanSpawn();
+    bool canSpawn = _soldiersAtFactory < MAX_UNITS_FACTORY;
 
     if (canSpawn && _spawnTimer > 0)
     {
@@ -58,57 +60,27 @@ public class FactoryManager : MonoBehaviour
         _spawnTimer = SpawnInterval;
       }
     }
-
-    UpdateSoldiersList();
   }
 
   private void SpawnPureSoldier()
   {
     bool spawnSuccessful = false;
-    for (int i = 0; i < _spawnedSoldiers.Length; i++)
+    if (_soldiersAtFactory < MAX_UNITS_FACTORY)
     {
-      if (_spawnedSoldiers[i] == null)
-      {
-        _spawnedSoldiers[i] = Instantiate(PureSoldierPrefab, _spawnPoints[i].position, Quaternion.identity);
-        spawnSuccessful = true;
-        break;
-      }
+      int randomID = Random.Range(0, _spawnPoints.Length);
+      Instantiate(PureSoldierPrefab, _spawnPoints[randomID].position, Quaternion.identity);
+      _soldiersAtFactory++;
+      spawnSuccessful = true;
     }
 
-    if(spawnSuccessful == false)
+    if (spawnSuccessful == false)
     {
       _spawnTimer = SpawnInterval;
     }
   }
 
-  private bool CheckIfCanSpawn()
+  public void SoldierLeavedFactory()
   {
-    bool canSpawn = false;
-    for (int i = 0; i < _spawnedSoldiers.Length; i++)
-    {
-      if (_spawnedSoldiers[i] == null)
-      {
-        canSpawn = true;
-        break;
-      }
-    }
-
-    if (canSpawn == false)
-    {
-      _spawnTimer = SpawnInterval;
-    }
-
-    return canSpawn;
-  }
-
-  private void UpdateSoldiersList()
-  {
-    for (int i = 0; i < _spawnedSoldiers.Length; i++)
-    {
-      if (_spawnedSoldiers[i] != null && _spawnedSoldiers[i].transform.position.x > Bound.position.x)
-      {
-        _spawnedSoldiers[i] = null;
-      }
-    }
+    _soldiersAtFactory--;
   }
 }

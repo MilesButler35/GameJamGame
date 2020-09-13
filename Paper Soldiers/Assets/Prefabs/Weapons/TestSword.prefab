@@ -121,4 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07c0e1b34cf3a545a61e7431eda367f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BlueEquivalent: {fileID: 0}
+  RedEquivalent: {fileID: 0}
+  TransformationType: 2
   WeaponType: 2

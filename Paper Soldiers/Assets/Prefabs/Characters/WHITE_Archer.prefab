@@ -10,17 +10,18 @@ PrefabInstance:
     - target: {fileID: 43864687, guid: b1bbb22d4bf9ddf45ba6272bc90848a2, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 22100000, guid: b23e123751fc3e349a83c27ca387083e,
+        type: 2}
     - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 15d534792a6a650448aee9b909ba7721,
+      objectReference: {fileID: -3754373054059876469, guid: e376a0a33271e9143850032ae6a6ff32,
         type: 3}
     - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.11792451
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
@@ -30,7 +31,7 @@ PrefabInstance:
     - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.5115709
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1989547626063826457, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
@@ -46,17 +47,22 @@ PrefabInstance:
     - target: {fileID: 3330763597860257174, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: AttackRange
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: Type
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: AttackInterval
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8884683467059398727, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
@@ -66,17 +72,17 @@ PrefabInstance:
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.78
+      value: 0.7333574
       objectReference: {fileID: 0}
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.16
+      value: -1.2899632
       objectReference: {fileID: 0}
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10.342773
       objectReference: {fileID: 0}
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
