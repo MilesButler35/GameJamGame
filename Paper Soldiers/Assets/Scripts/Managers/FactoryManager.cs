@@ -47,6 +47,9 @@ public class FactoryManager : MonoBehaviour
 
     SpawnManager spawnManager = FindObjectOfType<SpawnManager>();
     spawnManager.enabled = false;
+
+    PlayerController playerController = FindObjectOfType<PlayerController>();
+    playerController.enabled = false;
   }
 
   private void Update()

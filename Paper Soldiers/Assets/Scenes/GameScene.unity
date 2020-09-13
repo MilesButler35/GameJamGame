@@ -231,6 +231,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 83715332}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &147822209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 147822210}
+  m_Layer: 0
+  m_Name: PaintBuckets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &147822210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147822209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.3028672, y: -2.095409, z: -3.6777344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 570741728}
+  - {fileID: 1791380092}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &150209276
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +690,7 @@ GameObject:
   - component: {fileID: 570741730}
   - component: {fileID: 570741729}
   m_Layer: 0
-  m_Name: Paint Bucket
+  m_Name: Red Paint Bucket
   m_TagString: PaintBucket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,12 +753,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570741726}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.01, y: 1.59, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.7071333, y: 3.685409, z: 3.6777344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 147822210}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &570741729
 CircleCollider2D:
@@ -1158,7 +1190,7 @@ GameObject:
   - component: {fileID: 1791380090}
   - component: {fileID: 1791380089}
   m_Layer: 0
-  m_Name: Paint Bucket (1)
+  m_Name: Blue Paint Bucket
   m_TagString: PaintBucket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1250,12 +1282,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791380088}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.01, y: -1.37, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.7071333, y: 0.7254089, z: 3.6777344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 147822210}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813317832
 GameObject:
@@ -1520,6 +1552,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1024555858411790369, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4796391954772269411, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
         type: 3}
       propertyPath: m_AnchoredPosition.y
