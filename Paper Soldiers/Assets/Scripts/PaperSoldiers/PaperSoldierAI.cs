@@ -26,6 +26,8 @@ public class PaperSoldierAI : MonoBehaviour
 
   private bool _waitingEnemies;
 
+  public Vector2 AttackPosition;
+
   void Awake()
   {
     _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -97,7 +99,8 @@ public class PaperSoldierAI : MonoBehaviour
       if(_attackTimer <= 0)
       {
         _animator.SetTrigger("Attack");
-        _entityAttack.Attack(targetTransform.position);
+        AttackPosition = targetTransform.position;
+        //_entityAttack.Attack(targetTransform.position); CALLED NOW FROM THE ANIMATION
         _attackTimer = AttackInterval;
       }
 

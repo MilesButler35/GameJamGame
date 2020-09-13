@@ -17,6 +17,8 @@ public class EnemyAI : MonoBehaviour
 
   private Animator _animator;
 
+  public Vector2 AttackPosition;
+
   void Awake()
   {
     _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -42,7 +44,8 @@ public class EnemyAI : MonoBehaviour
       if (_attackTimer <= 0)
       {
         _animator.SetTrigger("Attack");
-        _entityAttack.Attack(targetTransform.position);
+        AttackPosition = targetTransform.position;
+        //_entityAttack.Attack(targetTransform.position); CALLED NOW FROM THE ANIMATION
         _attackTimer = AttackInterval;
       }
 

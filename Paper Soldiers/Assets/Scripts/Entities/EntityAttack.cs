@@ -7,8 +7,28 @@ public class EntityAttack : MonoBehaviour
   public GameObject ProjectilePrefab;
   public float AttackOriginOffset;
 
-  public void Attack(Vector2 attackPosition)
+  private PaperSoldierAI _paperSoldierAI;
+  private EnemyAI _enemyAI;
+
+  private void Awake()
   {
+    _paperSoldierAI = GetComponent<PaperSoldierAI>();
+    _enemyAI = GetComponentInParent<EnemyAI>();
+  }
+
+  public void Attack()
+  {
+    Vector2 attackPosition = transform.position;
+    if(_paperSoldierAI != null)
+    {
+      attackPosition = _paperSoldierAI.AttackPosition;
+    }
+
+    if(_enemyAI != null)
+    {
+      attackPosition = _enemyAI.AttackPosition;
+    }
+
     Vector2 attackOrigin = transform.position + transform.right * AttackOriginOffset;
 
     GameObject newProjectile = Instantiate(ProjectilePrefab, attackOrigin, Quaternion.identity);
