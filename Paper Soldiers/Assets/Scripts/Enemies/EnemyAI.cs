@@ -15,11 +15,14 @@ public class EnemyAI : MonoBehaviour
   private EntityData _entityData;
   private EntityAttack _entityAttack;
 
+  private Animator _animator;
+
   void Awake()
   {
     _rigidbody2D = GetComponent<Rigidbody2D>();
     _entityData = GetComponent<EntityData>();
     _entityAttack = GetComponent<EntityAttack>();
+    _animator = GetComponentInChildren<Animator>();
   }
 
   // Update is called once per frame
@@ -38,6 +41,7 @@ public class EnemyAI : MonoBehaviour
 
       if (_attackTimer <= 0)
       {
+        _animator.SetTrigger("Attack");
         _entityAttack.Attack(targetTransform.position);
         _attackTimer = AttackInterval;
       }
