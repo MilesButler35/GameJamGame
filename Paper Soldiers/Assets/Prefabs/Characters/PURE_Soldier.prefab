@@ -143,6 +143,7 @@ MonoBehaviour:
   Type: 0
   AttackRange: 1
   AttackInterval: 2
+  AttackPosition: {x: 0, y: 0}
 --- !u!114 &8884683467059398727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +314,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1809235379
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: ed572ae763a304042ae1eddb41f1a0f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

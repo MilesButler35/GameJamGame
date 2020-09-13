@@ -80,7 +80,7 @@ public class FactoryManager : MonoBehaviour
     if (_soldiersAtFactory < MAX_UNITS_FACTORY)
     {
       int randomID = Random.Range(0, _spawnPoints.Length);
-      Instantiate(PureSoldierPrefab, _spawnPoints[randomID].position, Quaternion.identity);
+      _spawnPoints[randomID].GetComponentInChildren<Animator>().SetTrigger("Spawn");
       _soldiersAtFactory++;
       spawnSuccessful = true;
     }
