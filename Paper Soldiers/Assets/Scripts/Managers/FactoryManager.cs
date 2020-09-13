@@ -51,6 +51,12 @@ public class FactoryManager : MonoBehaviour
       belt.enabled = false;
     }
 
+    Animator[] spawnersAnimators = FindObjectsOfType<Animator>();
+    foreach (var spawnerAnimator in spawnersAnimators)
+    {
+      spawnerAnimator.speed = 0;
+    }
+
     SpawnManager spawnManager = FindObjectOfType<SpawnManager>();
     spawnManager.enabled = false;
 

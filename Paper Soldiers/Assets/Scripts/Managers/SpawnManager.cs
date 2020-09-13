@@ -5,10 +5,10 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
   public GameObject[] enemyPrefabs;
-  private float xSpawnRangeMin = 10;
-  private float xSpawnRangeMax = 15;
-  private float ySpawnRangeMin = -5;
-  private float ySpawnRangeMax = 5;
+  public float xSpawnRangeMin = 10;
+  public float xSpawnRangeMax = 15;
+  public float ySpawnRangeMin = -5;
+  public float ySpawnRangeMax = 5;
   public int waveNumber = 1;
   public int amountToSpawn = 5;
   public int enemyCount;

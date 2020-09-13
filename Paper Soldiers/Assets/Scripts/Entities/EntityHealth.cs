@@ -7,7 +7,7 @@ public class EntityHealth : MonoBehaviour
 {
   public Action OnDeath;
 
-  private EntityData _entityData;
+  protected EntityData _entityData;
 
   void Start()
   {
