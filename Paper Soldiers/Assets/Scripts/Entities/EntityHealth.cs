@@ -22,7 +22,12 @@ public class EntityHealth : MonoBehaviour
     if(_entityData.HealthPoints <= 0)
     {
       OnDeath?.Invoke();
+      Death();
       Destroy(this.gameObject);
     }
+  }
+
+  protected virtual void Death()
+  {
   }
 }

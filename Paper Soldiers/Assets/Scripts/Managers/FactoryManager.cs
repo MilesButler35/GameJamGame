@@ -49,7 +49,7 @@ public class FactoryManager : MonoBehaviour
     spawnManager.enabled = false;
 
     PlayerController playerController = FindObjectOfType<PlayerController>();
-    playerController.enabled = false;
+    Destroy(playerController.gameObject);
   }
 
   private void Update()

@@ -795,6 +795,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 384660155908521664}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &650746412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5806788176380667236, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+    type: 3}
+  m_PrefabInstance: {fileID: 2717580839635590853}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &713226577 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1024555858411790369, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
@@ -918,6 +930,16 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 2717580839635590854}
+    - target: {fileID: 2644773412655570126, guid: 4ceb8db0c3531504fab1d4e94d9d1fb8,
+        type: 3}
+      propertyPath: waveText
+      value: 
+      objectReference: {fileID: 650746412}
+    - target: {fileID: 2644773412655570126, guid: 4ceb8db0c3531504fab1d4e94d9d1fb8,
+        type: 3}
+      propertyPath: spawnManager
+      value: 
+      objectReference: {fileID: 915579734}
     - target: {fileID: 2644773412655570127, guid: 4ceb8db0c3531504fab1d4e94d9d1fb8,
         type: 3}
       propertyPath: m_Name
@@ -1672,10 +1694,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5460964147731101467, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_text
+      value: 'Score: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460964147731101467, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460964147731101467, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460964147731101467, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460964147731101467, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 257
+      objectReference: {fileID: 0}
     - target: {fileID: 5460964147731101468, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -3.7000122
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460964147731101468, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 108.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806788176380667236, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_text
+      value: 'Wave: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806788176380667236, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806788176380667236, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806788176380667236, guid: e3f9fe2ed18e2b642b0390aa25a54f10,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3f9fe2ed18e2b642b0390aa25a54f10, type: 3}

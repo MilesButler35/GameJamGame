@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 2054858236194799336}
   - component: {fileID: 2054858236194799335}
   - component: {fileID: 2054858236194799334}
-  - component: {fileID: 2054858236194799333}
   - component: {fileID: 2054858236194799332}
   - component: {fileID: 2054858236194799331}
   - component: {fileID: 2054858236194799337}
   - component: {fileID: 2054858236194799338}
   - component: {fileID: 2054858236194799340}
   - component: {fileID: 2054858236194799339}
+  - component: {fileID: 9036714720891887249}
   m_Layer: 0
   m_Name: BigEnemy
   m_TagString: Enemy
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1188100849
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a8991bc1bf7584449709325be58d098, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -105,18 +105,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2054858236194799333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054858236194799330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558ac8119c6862f45a1f792f205abe36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2054858236194799332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,3 +199,16 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 24098988614982122, guid: 52ec261c6e3b835408953718a00e2bc4,
     type: 3}
   AttackOriginOffset: 0
+--- !u!114 &9036714720891887249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054858236194799330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfa7612b291c0c4f952cfd3d1c4e823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScorePoints: 5

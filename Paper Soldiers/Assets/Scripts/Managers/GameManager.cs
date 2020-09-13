@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+  private static GameManager _instance;
+  public static GameManager Instance => _instance;
+
   private int score;
   public TextMeshProUGUI scoreText;
   public TextMeshProUGUI waveText;
@@ -20,6 +23,14 @@ public class GameManager : MonoBehaviour
 
   public GameObject playerObject;
   public GameObject playerSpawn;
+
+  private void Awake()
+  {
+    if(_instance == null)
+    {
+      _instance = this;
+    }
+  }
 
   //Starts the game when the corresponding button is pressed
   public void StartGame()
