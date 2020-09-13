@@ -45,6 +45,12 @@ public class FactoryManager : MonoBehaviour
       Destroy(enemy.gameObject);
     }
 
+    ConveryourBelt[] allBelts = FindObjectsOfType<ConveryourBelt>();
+    foreach (var belt in allBelts)
+    {
+      belt.enabled = false;
+    }
+
     SpawnManager spawnManager = FindObjectOfType<SpawnManager>();
     spawnManager.enabled = false;
 

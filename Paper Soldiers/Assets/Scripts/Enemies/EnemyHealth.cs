@@ -8,6 +8,7 @@ public class EnemyHealth : EntityHealth
 
   protected override void Death()
   {
+    base.Death();
     GameManager.Instance.UpdateScore(ScorePoints);
   }
 }

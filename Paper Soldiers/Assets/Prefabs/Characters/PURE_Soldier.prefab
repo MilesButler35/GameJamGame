@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1989547626063826457}
   - component: {fileID: 1989547626063826456}
   - component: {fileID: 43864687}
-  - component: {fileID: 8267983170182633097}
+  - component: {fileID: 6554160683127009831}
   m_Layer: 0
   m_Name: PURE_Soldier
   m_TagString: PaperSoldier
@@ -232,7 +232,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8267983170182633097
+--- !u!114 &6554160683127009831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1989547626063826459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558ac8119c6862f45a1f792f205abe36, type: 3}
+  m_Script: {fileID: 11500000, guid: 242f7a342af882949bf2d49f984f99b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4877998895228616670
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 2535276536836484773}
   - component: {fileID: 4320291941257080206}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

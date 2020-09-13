@@ -24,6 +24,8 @@ public class PaperSoldierAI : MonoBehaviour
 
   private SpriteRenderer _spriteRenderer;
 
+  private bool _waitingEnemies;
+
   void Awake()
   {
     _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -42,8 +44,10 @@ public class PaperSoldierAI : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    _waitingEnemies = false;
+
     // While inside the Factory bound
-    if(transform.position.x < _factoryBound.position.x)
+    if (transform.position.x < _factoryBound.position.x)
     {
       float movementSpeed = 1;
       if(Type != ESoldierType.None)
@@ -81,6 +85,7 @@ public class PaperSoldierAI : MonoBehaviour
       else
       {
         _rigidbody2D.velocity = Vector2.zero;
+        _waitingEnemies = true;
       }
       return;
     }
@@ -110,7 +115,7 @@ public class PaperSoldierAI : MonoBehaviour
     {
       _animator.SetFloat("Speed", 1);
     }
-    else
+    else if(_waitingEnemies == true)
     {
       _animator.SetFloat("Speed", 0);
     }

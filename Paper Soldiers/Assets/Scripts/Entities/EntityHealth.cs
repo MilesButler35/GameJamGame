@@ -17,17 +17,26 @@ public class EntityHealth : MonoBehaviour
 
   public void ApplyDamage(float amount)
   {
-    _entityData.HealthPoints -= amount;
+    if (amount <= 0)
+      return;
 
-    if(_entityData.HealthPoints <= 0)
+    _entityData.HealthPoints -= amount;
+    OnDamage(amount);
+
+    if (_entityData.HealthPoints <= 0)
     {
       OnDeath?.Invoke();
       Death();
-      Destroy(this.gameObject);
     }
   }
 
   protected virtual void Death()
   {
+    Destroy(this.gameObject);
+  }
+
+  protected virtual void OnDamage(float amount)
+  {
+    UIFloatingTextsManager.Instance.ShowText(amount, transform);
   }
 }
