@@ -22,6 +22,8 @@ public class PaperSoldierAI : MonoBehaviour
 
   private Animator _animator;
 
+  private SpriteRenderer _spriteRenderer;
+
   void Awake()
   {
     _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -29,6 +31,7 @@ public class PaperSoldierAI : MonoBehaviour
     _entityAttack = GetComponent<EntityAttack>();
 
     _animator = GetComponent<Animator>();
+    _spriteRenderer = GetComponent<SpriteRenderer>();
 
     _factoryManager = FindObjectOfType<FactoryManager>();
     _factoryBound = _factoryManager.Bound;
@@ -51,8 +54,7 @@ public class PaperSoldierAI : MonoBehaviour
       {
         movementSpeed = _entityData.MovementSpeed / 5;
       }
-      
-      _animator.SetFloat("Speed", 1);
+
       _rigidbody2D.velocity = transform.right * movementSpeed;
       return;
     }
@@ -74,12 +76,10 @@ public class PaperSoldierAI : MonoBehaviour
     {
       if(transform.position.x > _factoryBound.position.x + 1)
       {
-        _animator.SetFloat("Speed", 1);
         _rigidbody2D.velocity = -transform.right * _entityData.MovementSpeed;
       }
       else
       {
-        _animator.SetFloat("Speed", 0);
         _rigidbody2D.velocity = Vector2.zero;
       }
       return;
@@ -102,6 +102,28 @@ public class PaperSoldierAI : MonoBehaviour
     Vector2 movementDirection = (targetTransform.position - transform.position).normalized;
     _rigidbody2D.velocity = movementDirection * _entityData.MovementSpeed;
     _animator.SetFloat("Speed", 1);
+  }
+
+  private void LateUpdate()
+  {
+    if(_rigidbody2D.velocity != Vector2.zero)
+    {
+      _animator.SetFloat("Speed", 1);
+    }
+    else
+    {
+      _animator.SetFloat("Speed", 0);
+    }
+
+    if(_rigidbody2D.velocity.x > 0)
+    {
+      _spriteRenderer.flipX = false;
+    }
+
+    if (_rigidbody2D.velocity.x < 0)
+    {
+      _spriteRenderer.flipX = true;
+    }
   }
 
   private Transform FindClosesTarget(out float distanceToTarget)

@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
   //Check if the object the player is colliding with is a weapon
   private void OnTriggerEnter2D(Collider2D other)
   {
-
     //Check to see if the player is colliding with a weapon, and mark true if the player is colliding with an item
     if ((other.CompareTag("Sword") || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && currentItem == null)
     {

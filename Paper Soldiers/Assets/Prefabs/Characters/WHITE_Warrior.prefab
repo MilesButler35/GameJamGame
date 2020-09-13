@@ -18,6 +18,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3243073735199694005, guid: e376a0a33271e9143850032ae6a6ff32,
         type: 3}
+    - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2102718619
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909017201363868858, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1989547626063826457, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: ProjectilePrefab
@@ -39,10 +49,20 @@ PrefabInstance:
       propertyPath: Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: AttackInterval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8884683467059398727, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: MovementSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884683467059398727, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: InitialHealthPoints
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9027649892994943487, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
