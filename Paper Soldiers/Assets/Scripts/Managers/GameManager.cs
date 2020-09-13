@@ -7,52 +7,58 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private int score;
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
+  private int score;
+  public TextMeshProUGUI scoreText;
+  public TextMeshProUGUI waveText;
+  public TextMeshProUGUI gameOverText;
 
-    public bool isGameActive;
-    public Button restartButton;
+  public bool isGameActive;
+  public Button restartButton;
 
-    public GameObject titleScreen;
-    public SpawnManager spawnManager;
+  public GameObject titleScreen;
+  public SpawnManager spawnManager;
 
-    public GameObject playerObject;
-    public GameObject playerSpawn;
+  public GameObject playerObject;
+  public GameObject playerSpawn;
 
-    //Starts the game when the corresponding button is pressed
-    public void StartGame()
-    {
-        titleScreen.gameObject.SetActive(false); //Turns off the Title Text
-        isGameActive = true; // Sets the game to active mode, which interacts with the spawn manager
-        this.GetComponent<SpawnManager>().enabled = true; //Sets the spawnmanager to on.
-        score = 0; // Makes sure the score is 0.
-        UpdateScore(0); 
-        UpdateWave(1); //Makes sure the Wave number is 1.
-        Instantiate(playerObject, playerSpawn.transform.position, Quaternion.identity); // Spawn player character
-    }
+  //Starts the game when the corresponding button is pressed
+  public void StartGame()
+  {
+    titleScreen.gameObject.SetActive(false); //Turns off the Title Text
+    isGameActive = true; // Sets the game to active mode, which interacts with the spawn manager
+    this.GetComponent<SpawnManager>().enabled = true; //Sets the spawnmanager to on.
+    score = 0; // Makes sure the score is 0.
+    UpdateScore(0);
+    //UpdateWave(1); //Makes sure the Wave number is 1.
+    Instantiate(playerObject, playerSpawn.transform.position, Quaternion.identity); // Spawn player character
+  }
 
-    //Makes sure to stop the wave spawner if the Game is over
-    public void GameOver()
-    {
-        isGameActive = false;
-        gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
-    }
+  private void Update()
+  {
+    UpdateWave();
+  }
 
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+  //Makes sure to stop the wave spawner if the Game is over
+  public void GameOver()
+  {
+    isGameActive = false;
+    gameOverText.gameObject.SetActive(true);
+    restartButton.gameObject.SetActive(true);
+  }
 
-    public void UpdateScore(int scoreToAdd)
-    {
-        score += scoreToAdd;
-        scoreText.text = "Score: " + score;
-    }
+  public void RestartGame()
+  {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  }
 
-    public void UpdateWave(int waveNumber)
-    {
-        waveNumber = spawnManager.waveNumber;
-    }
+  public void UpdateScore(int scoreToAdd)
+  {
+    score += scoreToAdd;
+    scoreText.text = "Score: " + score;
+  }
+
+  public void UpdateWave()
+  {
+    waveText.text = "Wave: " + spawnManager.waveNumber;
+  }
 }
