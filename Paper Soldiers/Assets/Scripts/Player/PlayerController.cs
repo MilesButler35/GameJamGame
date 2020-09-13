@@ -25,11 +25,14 @@ public class PlayerController : MonoBehaviour
   Transform soldier;
   GameObject paintBucket;
 
+  private Transform _factoryBound;
 
   // Start is called before the first frame update
   void Start()
   {
     playerRb = GetComponent<Rigidbody2D>();
+
+    _factoryBound = FindObjectOfType<FactoryManager>().Bound;
   }
 
   // Update is called once per frame
@@ -45,7 +48,16 @@ public class PlayerController : MonoBehaviour
 
   private void FixedUpdate()
   {
-    playerRb.velocity = new Vector2(horizontalMove * moveSpeed, verticalMove * moveSpeed);
+    float horizontal = horizontalMove * moveSpeed;
+    float vertical = verticalMove * moveSpeed;
+    playerRb.velocity = new Vector2(horizontal, vertical);
+
+    if (transform.position.x  > _factoryBound.position.x)
+    {
+      Vector3 correctedPosition = transform.position;
+      correctedPosition.x = _factoryBound.position.x;
+      transform.position = correctedPosition;
+    }
   }
 
   //Check if the object the player is colliding with is a weapon
