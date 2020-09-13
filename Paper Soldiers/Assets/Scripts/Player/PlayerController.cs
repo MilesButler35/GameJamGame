@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
       Debug.Log("Leaving " + other.tag);
       touchingWeapon = false;
+      currentItem = null;
     }
 
     if (other.CompareTag("PaperSoldier") && currentItem != null)
