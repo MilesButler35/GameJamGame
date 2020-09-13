@@ -67,22 +67,22 @@ public class PlayerController : MonoBehaviour
     if ((other.CompareTag("Sword") || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && touchedWeapon == null)
     {
 
-      Debug.Log("Impact with " + other.tag);
+      //Debug.Log("Impact with " + other.tag);
       //Take a reference to Collided Object
       touchingWeapon = true;
       touchedWeapon = other.transform;
     }
 
-    if (other.CompareTag("PaperSoldier") && currentItem != null)
-    {
-      Debug.Log("Impact with Soldier");
-      touchingSoldier = true;
-      soldier = other.transform;
-    }
+    //if (other.CompareTag("PaperSoldier") && currentItem != null)
+    //{
+    //  Debug.Log("Impact with Soldier");
+    //  touchingSoldier = true;
+    //  soldier = other.transform;
+    //}
 
     if (other.CompareTag("PaintBucket"))
     {
-      Debug.Log("Impact with Paint Bucket");
+      //Debug.Log("Impact with Paint Bucket");
       touchingPaintBucket = true;
       paintBucket = other.gameObject;
     }
@@ -94,21 +94,21 @@ public class PlayerController : MonoBehaviour
     if ((other.CompareTag("Sword") || other.CompareTag("Bow") || other.CompareTag("WizardHat")) && touchedWeapon != null)
     {
 
-      Debug.Log("Leaving " + other.tag);
+      //Debug.Log("Leaving " + other.tag);
       touchingWeapon = false;
       touchedWeapon = null;
     }
 
-    if (other.CompareTag("PaperSoldier") && currentItem != null)
-    {
-      Debug.Log("Leaving Soldier");
-      touchingSoldier = false;
-      soldier = null;
-    }
+    //if (other.CompareTag("PaperSoldier") && currentItem != null)
+    //{
+    //  Debug.Log("Leaving Soldier");
+    //  touchingSoldier = false;
+    //  soldier = null;
+    //}
 
     if (other.CompareTag("PaintBucket"))
     {
-      Debug.Log("Leaving Paint Bucket");
+      //Debug.Log("Leaving Paint Bucket");
       touchingPaintBucket = false;
       paintBucket = null;
     }
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.Space) && touchingWeapon == true)
     {
-      Debug.Log("Pickup Weapon");
+      //Debug.Log("Pickup Weapon");
       //Move it to carrying point
       currentItem = touchedWeapon;
       currentItem.position = carryLocation.position;
@@ -132,19 +132,39 @@ public class PlayerController : MonoBehaviour
 
       if (hasWeapon == true)
       {
-        Debug.Log("Player has a weapon");
+        //Debug.Log("Player has a weapon");
       }
     }
   }
 
   void GiveWeapon()
   {
-    if (touchingSoldier == true && Input.GetKeyDown(KeyCode.Space) && hasWeapon == true)
+    if (Input.GetKeyDown(KeyCode.Space) && hasWeapon == true)
     {
-      Debug.Log("Weapon Given");
+      //Debug.Log("Weapon Given");
+
+      Collider2D[] soldiers = Physics2D.OverlapCircleAll(transform.position, 1, 1 << LayerMask.NameToLayer("PaperSoldier"));
+      float closestDistance = float.MaxValue;
+      GameObject closestSoldier = null;
+      foreach (var soldier in soldiers)
+      {
+        float distanceToSoldier = Vector2.Distance(transform.position, soldier.transform.position);
+        if(distanceToSoldier < closestDistance)
+        {
+          closestDistance = distanceToSoldier;
+          closestSoldier = soldier.gameObject;
+        }
+      }
+
+      if (closestSoldier == null)
+        return;
 
       Weapon weapon = currentItem.GetComponent<Weapon>();
-      PaperSoldierTransformation soldierTransformation = soldier.GetComponent<PaperSoldierTransformation>();
+      PaperSoldierTransformation soldierTransformation = closestSoldier.GetComponent<PaperSoldierTransformation>();
+
+      if (soldierTransformation == null)
+        return;
+
       soldierTransformation.PerformTransformation(weapon.TransformationType);
       Destroy(currentItem.gameObject);
 

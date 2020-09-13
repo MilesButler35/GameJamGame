@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1989547626063826456}
   - component: {fileID: 43864687}
   - component: {fileID: 6554160683127009831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PURE_Soldier
   m_TagString: PaperSoldier
   m_Icon: {fileID: 0}
