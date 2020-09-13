@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
   public TextMeshProUGUI scoreText;
   public TextMeshProUGUI waveText;
   public TextMeshProUGUI gameOverText;
+  public TextMeshProUGUI enemiesLeftText;
 
   public bool isGameActive;
   public Button restartButton;
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
   private void Update()
   {
     UpdateWave();
+    UpdateEnemiesLeft();
   }
 
   //Makes sure to stop the wave spawner if the Game is over
@@ -71,5 +73,10 @@ public class GameManager : MonoBehaviour
   public void UpdateWave()
   {
     waveText.text = "Wave: " + spawnManager.waveNumber;
+  }
+
+  public void UpdateEnemiesLeft()
+  {
+    enemiesLeftText.text = "Enemies Left: " + spawnManager.enemyCount;
   }
 }
