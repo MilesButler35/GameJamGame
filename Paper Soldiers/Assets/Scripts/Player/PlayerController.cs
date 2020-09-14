@@ -27,10 +27,13 @@ public class PlayerController : MonoBehaviour
 
   private Transform _factoryBound;
 
+  private Animator _animator;
+
   // Start is called before the first frame update
   void Start()
   {
     playerRb = GetComponent<Rigidbody2D>();
+    _animator = GetComponentInChildren<Animator>();
 
     _factoryBound = FindObjectOfType<FactoryManager>().Bound;
   }
@@ -125,7 +128,8 @@ public class PlayerController : MonoBehaviour
       currentItem.position = carryLocation.position;
 
       //Make it a child of the player so that it moves along with the player
-      currentItem.parent = transform;
+      currentItem.parent = carryLocation;
+      currentItem.rotation = carryLocation.rotation;
 
       touchingWeapon = false;
       hasWeapon = true;
@@ -134,6 +138,8 @@ public class PlayerController : MonoBehaviour
       {
         //Debug.Log("Player has a weapon");
       }
+
+      _animator.SetBool("Holding", true);
     }
   }
 
@@ -171,6 +177,8 @@ public class PlayerController : MonoBehaviour
       hasWeapon = false;
       currentItem = null;
       touchingWeapon = false;
+
+      _animator.SetBool("Holding", false);
     }
   }
 

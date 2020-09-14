@@ -7,11 +7,11 @@ public class FactoryHealth : EntityHealth
 {
   public Image HealthBar;
 
-  [SerializeField] private ObjectShaker _objectShaker;
+  public ObjectShaker ObjectShaker;
 
   protected override void OnDamage(float amount)
   {
-    _objectShaker.Begin();
+    ObjectShaker.Begin();
 
     HealthBar.fillAmount = _entityData.HealthPoints / _entityData.InitialHealthPoints;
   }
