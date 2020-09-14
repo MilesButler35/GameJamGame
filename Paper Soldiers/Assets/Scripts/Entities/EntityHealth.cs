@@ -20,9 +20,6 @@ public class EntityHealth : MonoBehaviour
     if (amount <= 0)
       return;
 
-    if (gameObject.name.Contains("Enemy") == false)
-      Debug.Log($"{gameObject.name} took damage. See stack trace =)");
-
     _entityData.HealthPoints -= amount;
     OnDamage(amount);
 
