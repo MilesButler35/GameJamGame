@@ -11,12 +11,12 @@ public class AoEProjectile : AttackBase
     GameObject explosionObject = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
 
     AttackBase attackBase = explosionObject.GetComponent<AttackBase>();
-    attackBase?.Initialize(this.gameObject, this.tag);
+    attackBase?.Initialize(_owner, _teamTag);
 
     if(attackBase == null)
     {
       Explosion explosion = explosionObject.GetComponent<Explosion>();
-      explosion?.Initialize(this.gameObject, this.tag);
+      explosion?.Initialize(_owner, _teamTag);
     }
   }
 }

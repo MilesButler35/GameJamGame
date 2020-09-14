@@ -77,6 +77,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 2165261718429022901, guid: ed475e3780ead7f40acbce823ddd993c,
+        type: 3}
+      propertyPath: InitialHealthPoints
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9141314949420399849, guid: ed475e3780ead7f40acbce823ddd993c,
         type: 3}
       propertyPath: m_Name

@@ -13,8 +13,8 @@ public class AttackBase : MonoBehaviour
   public int RedStacksAmount;
   public int BlueStacksAmount;
 
-  private GameObject _owner;
-  private string _teamTag;
+  protected GameObject _owner;
+  protected string _teamTag;
 
   private void Update()
   {

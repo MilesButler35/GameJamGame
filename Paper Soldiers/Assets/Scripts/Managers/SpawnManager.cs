@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
   public GameObject[] enemyPrefabs;
+  public GameObject bossPrefab;
   public float xSpawnRangeMin = 10;
   public float xSpawnRangeMax = 15;
   public float ySpawnRangeMin = -5;
@@ -46,6 +47,11 @@ public class SpawnManager : MonoBehaviour
     {
       int randomID = Random.Range(0, enemyPrefabs.Length);
       Instantiate(enemyPrefabs[randomID], GenerateSpawnPosition(), enemyPrefabs[randomID].transform.rotation);
+    }
+
+    if(waveNumber % 3 == 0)
+    {
+      Instantiate(bossPrefab, GenerateSpawnPosition(), bossPrefab.transform.rotation);
     }
   }
 }

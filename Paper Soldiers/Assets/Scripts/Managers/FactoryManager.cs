@@ -16,6 +16,8 @@ public class FactoryManager : MonoBehaviour
 
   private const int MAX_UNITS_FACTORY = 3;
 
+  public float RandomSpawnAddition = 2;
+
   private void Awake()
   {
     _spawnPoints = new Transform[transform.childCount];
@@ -75,7 +77,7 @@ public class FactoryManager : MonoBehaviour
       if (_spawnTimer <= 0)
       {
         SpawnPureSoldier();
-        _spawnTimer = SpawnInterval;
+        _spawnTimer = SpawnInterval + Random.Range(0f, RandomSpawnAddition);
       }
     }
   }

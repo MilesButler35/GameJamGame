@@ -9,7 +9,7 @@ public class RedDebuff : MonoBehaviour
   public float IntervalToDeapply = 2;
   private float _deapplyTimer;
 
-  private readonly float DAMAGE_AMOUNT = .1f;
+  private readonly float DAMAGE_AMOUNT = .3f;
   private readonly float DAMAGE_INTERVAL = .75f;
 
   private float _damageTimer;

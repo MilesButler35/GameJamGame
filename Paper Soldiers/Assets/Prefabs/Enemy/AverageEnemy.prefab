@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 384660155457119788}
   - component: {fileID: -4503682991228239757}
   m_Layer: 0
-  m_Name: SmallEnemy
+  m_Name: AverageEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +357,7 @@ Transform:
   m_GameObject: {fileID: 384660155457119778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.16, y: -0.43, z: 4.90625}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1.0034087, y: 1.0034087, z: 1.0034087}
   m_Children:
   - {fileID: 2670849406260107512}
   - {fileID: 4992326176825211527}
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef066678b33618346be7fb07f4cc8824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialHealthPoints: 15
+  InitialHealthPoints: 30
   HealthPoints: 0
   MovementSpeed: 1.25
 --- !u!50 &384660155457119779
@@ -459,8 +459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a1a552b97b50a488e338234aaf020a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageToFactory: 1
-  AttackRange: 0.6
+  DamageToFactory: 5
+  AttackRange: 1
   AttackInterval: 1
   AttackPosition: {x: 0, y: 0}
 --- !u!114 &-4503682991228239757
@@ -747,7 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12dfed8decd98c94190d23452259244d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilePrefab: {fileID: 24098988614982122, guid: 52ec261c6e3b835408953718a00e2bc4,
+  ProjectilePrefab: {fileID: 24098988614982122, guid: 30b38b8990e9a734c9884a688610ffe4,
     type: 3}
   AttackOriginOffset: 0
 --- !u!1 &6001707236639390159

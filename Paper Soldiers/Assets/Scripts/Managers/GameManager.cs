@@ -67,16 +67,16 @@ public class GameManager : MonoBehaviour
   public void UpdateScore(int scoreToAdd)
   {
     score += scoreToAdd;
-    scoreText.text = "Score: " + score;
+    scoreText.text = score.ToString();
   }
 
   public void UpdateWave()
   {
-    waveText.text = "Wave: " + spawnManager.waveNumber;
+    waveText.text = spawnManager.waveNumber.ToString();
   }
 
   public void UpdateEnemiesLeft()
   {
-    enemiesLeftText.text = "Enemies Left: " + spawnManager.enemyCount;
+    enemiesLeftText.text = spawnManager.enemyCount.ToString();
   }
 }
