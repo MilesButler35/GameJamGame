@@ -80,12 +80,13 @@ public class PaperSoldierAI : MonoBehaviour
     Transform targetTransform =  FindClosesTarget(out distanceToTarget);
     if (targetTransform == null)
     {
-      if(transform.position.x > _factoryBound.position.x + 1)
+      if (transform.position.x > _factoryBound.position.x + 1)
       {
         _rigidbody2D.velocity = -transform.right * _entityData.MovementSpeed;
       }
       else
       {
+        _animator.SetTrigger("Rest");
         _rigidbody2D.velocity = Vector2.zero;
         _waitingEnemies = true;
       }

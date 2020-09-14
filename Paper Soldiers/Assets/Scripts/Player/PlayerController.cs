@@ -184,9 +184,25 @@ public class PlayerController : MonoBehaviour
 
   private void PaintWeapon()
   {
-    if(Input.GetKeyDown(KeyCode.Space) && touchingPaintBucket && hasWeapon == true)
+    if(Input.GetKeyDown(KeyCode.Space) && hasWeapon == true)
     {
-      PaintColor targetColor = paintBucket.GetComponent<PaintBucket>().MyColor;
+      Collider2D[] paintBuckets = Physics2D.OverlapCircleAll(transform.position, 1, 1 << LayerMask.NameToLayer("PaintBucket"));
+      float closestDistance = float.MaxValue;
+      GameObject closestBucket = null;
+      foreach (var bucket in paintBuckets)
+      {
+        float distanceToSoldier = Vector2.Distance(transform.position, bucket.transform.position);
+        if (distanceToSoldier < closestDistance)
+        {
+          closestDistance = distanceToSoldier;
+          closestBucket = bucket.gameObject;
+        }
+      }
+
+      if (closestBucket == null)
+        return;
+
+      PaintColor targetColor = closestBucket.GetComponent<PaintBucket>().MyColor;
       currentItem.GetComponent<Weapon>().TransformWeapon(targetColor);
     }
   }
