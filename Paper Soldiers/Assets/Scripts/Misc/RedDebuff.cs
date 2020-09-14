@@ -19,6 +19,8 @@ public class RedDebuff : MonoBehaviour
 
   private EntityHealth _entityHealth;
 
+  public GameObject RedDebuffIcon;
+
   void Start()
   {
     _entityData = GetComponent<EntityData>();
@@ -65,10 +67,22 @@ public class RedDebuff : MonoBehaviour
     {
       _damageTimer = DAMAGE_INTERVAL;
     }
+
+    if (RedDebuffIcon.activeSelf == false)
+    {
+      RedDebuffIcon.SetActive(true);
+    }
+    RedDebuffIcon.transform.localScale = Vector3.one * _stacksCount * .075f;
   }
 
   private void Deapply()
   {
     _stacksCount = Mathf.Max(_stacksCount - 1, 0);
+
+    if (_stacksCount <= 0 && RedDebuffIcon.activeSelf == true)
+    {
+      RedDebuffIcon.SetActive(false);
+    }
+    RedDebuffIcon.transform.localScale = Vector3.one * _stacksCount * .075f;
   }
 }

@@ -9,11 +9,13 @@ public class BlueDebuff : MonoBehaviour
   public float IntervalToDeapply = 2;
   private float _deapplyTimer;
 
-  private readonly float SPEED_MODIFIER = .125f;
+  private readonly float SPEED_MODIFIER = .075f;
 
   private EntityData _entityData;
   private int _stacksCount;
   private float _originalSpeed;
+
+  public GameObject BlueDebuffIcon;
 
   void Start()
   {
@@ -44,6 +46,12 @@ public class BlueDebuff : MonoBehaviour
     _entityData.MovementSpeed = _originalSpeed - (float)_stacksCount * SPEED_MODIFIER;
     _entityData.MovementSpeed = Mathf.Max(_entityData.MovementSpeed, 0);
     _deapplyTimer = IntervalToDeapply;
+
+    if (BlueDebuffIcon.activeSelf == false)
+    {
+      BlueDebuffIcon.SetActive(true);
+    }
+    BlueDebuffIcon.transform.localScale = Vector3.one * _stacksCount * .09f;
   }
 
   private void Deapply()
@@ -51,5 +59,11 @@ public class BlueDebuff : MonoBehaviour
     _stacksCount = Mathf.Max(_stacksCount - 1, 0);
     _entityData.MovementSpeed = _originalSpeed - (float)_stacksCount * SPEED_MODIFIER;
     _entityData.MovementSpeed = Mathf.Max(_entityData.MovementSpeed, 0);
+
+    if (_stacksCount <= 0 && BlueDebuffIcon.activeSelf == true)
+    {
+      BlueDebuffIcon.SetActive(false);
+    }
+    BlueDebuffIcon.transform.localScale = Vector3.one * _stacksCount * .09f;
   }
 }

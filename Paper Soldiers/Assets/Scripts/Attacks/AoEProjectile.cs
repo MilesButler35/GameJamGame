@@ -12,5 +12,11 @@ public class AoEProjectile : AttackBase
 
     AttackBase attackBase = explosionObject.GetComponent<AttackBase>();
     attackBase?.Initialize(this.gameObject, this.tag);
+
+    if(attackBase == null)
+    {
+      Explosion explosion = explosionObject.GetComponent<Explosion>();
+      explosion?.Initialize(this.gameObject, this.tag);
+    }
   }
 }
