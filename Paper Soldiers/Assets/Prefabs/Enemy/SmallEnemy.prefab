@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef066678b33618346be7fb07f4cc8824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialHealthPoints: 15
+  InitialHealthPoints: 10
   HealthPoints: 0
   MovementSpeed: 1.25
 --- !u!50 &384660155457119779

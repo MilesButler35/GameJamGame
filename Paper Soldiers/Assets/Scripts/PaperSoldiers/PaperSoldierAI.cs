@@ -105,7 +105,7 @@ public class PaperSoldierAI : MonoBehaviour
         _animator.SetTrigger("Attack");
 
         int randomID = Random.Range(0, AttackClip.Length);
-        AudioSource.PlayClipAtPoint(AttackClip[randomID], transform.position);
+        AudioSource.PlayClipAtPoint(AttackClip[randomID], Camera.main.transform.position);
 
         AttackPosition = targetTransform.position;
         //_entityAttack.Attack(targetTransform.position); CALLED NOW FROM THE ANIMATION

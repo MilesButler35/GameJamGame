@@ -23,7 +23,7 @@ public class PaperSoldierHealth : EntityHealth
     GetComponent<Collider2D>().enabled = false;
     GetComponent<SpriteRenderer>().sortingLayerName = "DeadPaperSoldiers";
     _animator.SetTrigger("Death");
-    yield return new WaitForSeconds(3);
+    yield return new WaitForSeconds(10);
     Destroy(this.gameObject);
   }
 }

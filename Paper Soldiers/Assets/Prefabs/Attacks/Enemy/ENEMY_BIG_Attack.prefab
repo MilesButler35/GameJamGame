@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79941b519525f9f4ba2ae8f77a62427d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 10
   AttackType: 0
   RedStacksAmount: 0
   BlueStacksAmount: 0
