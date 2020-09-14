@@ -18,6 +18,8 @@ public class FactoryManager : MonoBehaviour
 
   public float RandomSpawnAddition = 2;
 
+  public AudioClip[] SpawnClips;
+
   private void Awake()
   {
     _spawnPoints = new Transform[transform.childCount];
@@ -91,6 +93,9 @@ public class FactoryManager : MonoBehaviour
       _spawnPoints[randomID].GetComponentInChildren<Animator>().SetTrigger("Spawn");
       _soldiersAtFactory++;
       spawnSuccessful = true;
+
+      randomID = Random.Range(0, SpawnClips.Length);
+      AudioSource.PlayClipAtPoint(SpawnClips[randomID], Camera.main.transform.position);
     }
 
     if (spawnSuccessful == false)

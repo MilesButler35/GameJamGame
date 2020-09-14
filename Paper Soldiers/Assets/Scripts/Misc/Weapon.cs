@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
   public Color RedColor;
   public Color BlueColor;
 
+  public AudioClip EquipClip;
+
   public void TransformWeapon(PaintColor newColor)
   {
     SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -21,6 +23,7 @@ public class Weapon : MonoBehaviour
     {
       case PaintColor.Red:
         spriteRenderer.color = RedColor;
+
 
         if (WeaponType == WeaponType.Sword)
           TransformationType = ESoldierType.RedWarrior;
@@ -46,5 +49,10 @@ public class Weapon : MonoBehaviour
 
         break;
     }
+  }
+
+  public void OnGiveWeapon()
+  {
+    AudioSource.PlayClipAtPoint(EquipClip, Camera.main.transform.position);
   }
 }

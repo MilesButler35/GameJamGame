@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PaperSoldierAI : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class PaperSoldierAI : MonoBehaviour
   private bool _waitingEnemies;
 
   public Vector2 AttackPosition;
+
+  public AudioClip[] AttackClip;
 
   void Awake()
   {
@@ -100,6 +103,10 @@ public class PaperSoldierAI : MonoBehaviour
       if(_attackTimer <= 0)
       {
         _animator.SetTrigger("Attack");
+
+        int randomID = Random.Range(0, AttackClip.Length);
+        AudioSource.PlayClipAtPoint(AttackClip[randomID], transform.position);
+
         AttackPosition = targetTransform.position;
         //_entityAttack.Attack(targetTransform.position); CALLED NOW FROM THE ANIMATION
         _attackTimer = AttackInterval;

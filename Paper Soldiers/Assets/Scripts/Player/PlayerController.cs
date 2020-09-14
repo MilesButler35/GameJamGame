@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
 
   private Animator _animator;
 
+  public AudioClip[] GrabClips;
+  public AudioClip[] PaintClips;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -134,6 +137,9 @@ public class PlayerController : MonoBehaviour
       touchingWeapon = false;
       hasWeapon = true;
 
+      int randomID = UnityEngine.Random.Range(0, GrabClips.Length);
+      AudioSource.PlayClipAtPoint(GrabClips[randomID], Camera.main.transform.position);
+
       if (hasWeapon == true)
       {
         //Debug.Log("Player has a weapon");
@@ -166,6 +172,7 @@ public class PlayerController : MonoBehaviour
         return;
 
       Weapon weapon = currentItem.GetComponent<Weapon>();
+      weapon.OnGiveWeapon();
       PaperSoldierTransformation soldierTransformation = closestSoldier.GetComponent<PaperSoldierTransformation>();
 
       if (soldierTransformation == null)
@@ -201,6 +208,9 @@ public class PlayerController : MonoBehaviour
 
       if (closestBucket == null)
         return;
+
+      int randomID = UnityEngine.Random.Range(0, PaintClips.Length);
+      AudioSource.PlayClipAtPoint(PaintClips[randomID], Camera.main.transform.position);
 
       PaintColor targetColor = closestBucket.GetComponent<PaintBucket>().MyColor;
       currentItem.GetComponent<Weapon>().TransformWeapon(targetColor);

@@ -463,6 +463,8 @@ MonoBehaviour:
   AttackRange: 0.6
   AttackInterval: 1
   AttackPosition: {x: 0, y: 0}
+  AttackClip: {fileID: 8300000, guid: 863bd57901d9f2442b529d874734aaee, type: 3}
+  AttackFactoryClip: {fileID: 8300000, guid: 185d844f7b6bdfe469fb971c29685adb, type: 3}
 --- !u!114 &-4503682991228239757
 MonoBehaviour:
   m_ObjectHideFlags: 0

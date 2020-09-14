@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
 
   public GameObject pauseMenuUI;
 
+  public AudioClip[] ClickClips;
+
   // Update is called once per frame
   void Update()
   {
@@ -30,20 +32,35 @@ public class PauseMenu : MonoBehaviour
     pauseMenuUI.SetActive(false);
     Time.timeScale = 1f;
     GameIsPaused = false;
+
+    int randomID = Random.Range(0, ClickClips.Length);
+    AudioSource.PlayClipAtPoint(ClickClips[randomID], Camera.main.transform.position);
   }
+
   void Pause()
   {
     pauseMenuUI.SetActive(true);
     Time.timeScale = 0f;
     GameIsPaused = true;
+
+    int randomID = Random.Range(0, ClickClips.Length);
+    AudioSource.PlayClipAtPoint(ClickClips[randomID], Camera.main.transform.position);
   }
+
   public void LoadMenu()
   {
     Time.timeScale = 1f;
     SceneManager.LoadScene("MenuScene");
+
+    int randomID = Random.Range(0, ClickClips.Length);
+    AudioSource.PlayClipAtPoint(ClickClips[randomID], Camera.main.transform.position);
   }
+
   public void QuitGame()
   {
+    int randomID = Random.Range(0, ClickClips.Length);
+    AudioSource.PlayClipAtPoint(ClickClips[randomID], Camera.main.transform.position);
+
     Application.Quit();
   }
 }

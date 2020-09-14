@@ -46,6 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
+      propertyPath: AttackClip.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
       propertyPath: Type
       value: 1
       objectReference: {fileID: 0}
@@ -54,6 +59,16 @@ PrefabInstance:
       propertyPath: AttackInterval
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: AttackClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9aacfe37c97095349aacfa1e19426da0, type: 3}
+    - target: {fileID: 7423998403331333325, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
+        type: 3}
+      propertyPath: AttackClip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9aacfe37c97095349aacfa1e19426da0, type: 3}
     - target: {fileID: 8884683467059398727, guid: b1bbb22d4bf9ddf45ba6272bc90848a2,
         type: 3}
       propertyPath: MovementSpeed

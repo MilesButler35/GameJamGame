@@ -19,6 +19,9 @@ public class EnemyAI : MonoBehaviour
 
   public Vector2 AttackPosition;
 
+  public AudioClip AttackClip;
+  public AudioClip AttackFactoryClip;
+
   void Awake()
   {
     _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -45,6 +48,9 @@ public class EnemyAI : MonoBehaviour
       {
         _animator.SetTrigger("Attack");
         AttackPosition = targetTransform.position;
+
+        AudioSource.PlayClipAtPoint(AttackClip, Camera.main.transform.position);
+
         //_entityAttack.Attack(targetTransform.position); CALLED NOW FROM THE ANIMATION
         _attackTimer = AttackInterval;
       }
@@ -93,6 +99,8 @@ public class EnemyAI : MonoBehaviour
       EntityHealth factoryHealth = collider.GetComponent<EntityHealth>();
       if(factoryHealth != null)
       {
+        AudioSource.PlayClipAtPoint(AttackFactoryClip, Camera.main.transform.position);
+
         factoryHealth.ApplyDamage(DamageToFactory);
         Destroy(this.gameObject);
       }

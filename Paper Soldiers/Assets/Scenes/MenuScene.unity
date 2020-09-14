@@ -2004,7 +2004,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dfc78258cad29ef479340966f8064f11, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4224,6 +4224,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TutorialScreen: {fileID: 38522605}
   MainScreen: {fileID: 1390162766}
+  ClickClips:
+  - {fileID: 8300000, guid: d50950c1eebe3934cacc7d61c17aa550, type: 3}
+  - {fileID: 8300000, guid: 1c06802fe1f41884384eede740517090, type: 3}
+  Source: {fileID: 0}
 --- !u!1 &1692416236
 GameObject:
   m_ObjectHideFlags: 0
